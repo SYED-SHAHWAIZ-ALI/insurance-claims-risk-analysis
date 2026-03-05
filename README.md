@@ -67,18 +67,18 @@ These insights highlight concentration risk and help identify high-performing an
 
 
 ## Project Structure
-nsurance-claims-risk-analysis
+insurance-claims-risk-analysis
 │
 ├── data
-│ └── sample-insurance-data.csv
+│   └── insurance_raw_sample_100_rows.csv
 │
 ├── scripts
-│ └── risk_modeling_queries.sql
 │
 ├── docs
-│ └── insurance-claims-risk-analysis-report.pdf
+│   └── insurance-claims-risk-analysis-report.pdf
 │
 └── README.md
+
 
 
 
