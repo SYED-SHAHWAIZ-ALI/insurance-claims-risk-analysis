@@ -67,6 +67,8 @@ These insights highlight concentration risk and help identify high-performing an
 
 
 ## Project Structure
+
+```
 insurance-claims-risk-analysis
 │
 ├── data
@@ -77,8 +79,9 @@ insurance-claims-risk-analysis
 ├── docs
 │   └── insurance-claims-risk-analysis-report.pdf
 │
-└── README.md
-
+├── README.md
+└── LICENSE
+```
 
 
 
@@ -87,6 +90,13 @@ insurance-claims-risk-analysis
 📄 **Full project documentation and analysis report**
 
 [View Report](docs/insurance-claims-risk-analysis-report.pdf)
+## Dataset
+
+A sample of the raw dataset (100 rows) used in the analysis is available below.
+
+📊 **Download Sample Dataset**
+
+[insurance_raw_sample_100_rows.csv](data/insurance_raw_sample_100_rows.csv)
 
 
 
