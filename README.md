@@ -72,7 +72,8 @@ These insights highlight concentration risk and help identify high-performing an
 insurance-claims-risk-analysis
 │
 ├── data
-│   └── insurance_raw_sample_100_rows.csv
+│   ├── insurance_raw_sample_100_rows.csv
+│   └── insurance_clean_sample_100_rows.csv
 │
 ├── scripts
 │
