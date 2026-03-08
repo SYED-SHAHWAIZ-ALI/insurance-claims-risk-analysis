@@ -76,6 +76,9 @@ insurance-claims-risk-analysis
 │   └── insurance_clean_sample_100_rows.csv
 │
 ├── scripts
+│   ├── 01_Cleaning_Pipeline.sql
+│   ├── 02_Exploratory_Analysis.sql
+│   └── 03_Risk_Modeling.sql
 │
 ├── docs
 │   └── insurance-claims-risk-analysis-report.pdf
@@ -83,7 +86,11 @@ insurance-claims-risk-analysis
 ├── README.md
 └── LICENSE
 ```
+### Scripts Overview
 
+- **01_Cleaning_Pipeline.sql** – Data cleaning, tag standardization, missing value handling, premium calculation.
+- **02_Exploratory_Analysis.sql** – Initial data exploration and summary metrics.
+- **03_Risk_Modeling.sql** – Profitability and claims-to-premium risk analysis.
 
 
 ## Project Report
