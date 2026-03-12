@@ -78,8 +78,8 @@ Implemented SQL calculations to evaluate portfolio performance:
 - The portfolio contains **22,088 insured animals** across **10 farms**.
 - Total insured exposure exceeds **278M**, highlighting substantial financial liability.
 - Total premium income is approximately **8.35M**, while total claims exceed **298M**.
-- The portfolio-level **loss ratio is 35.72**, indicating that claims are far higher than premium income.
-
+- he portfolio-level loss ratio is 3572%, meaning total claims significantly exceed premium income.
+  
 ### Farm-Level Risk & Profitability
 - Financial performance varies significantly across farms, with some generating strong premium income while others contribute disproportionately to claims.
 - **Hi Cattle Farm** is one of the highest premium-generating farms in the portfolio.
