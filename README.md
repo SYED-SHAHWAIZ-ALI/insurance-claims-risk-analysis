@@ -199,8 +199,7 @@ insurance-claims-risk-analysis
 
 - **01_Cleaning_Pipeline.sql** – Data cleaning, tag standardization, missing value handling, premium calculation.
 - **02_Exploratory_Portfolio_Analysis.sql** – Initial data exploration and summary metrics.
-- **03_Risk_Modeling.sql** – Profitability and claims-to-premium risk analysis.
-
+- **03_Risk_Modeling.sql** – Farm-level risk classification, loss contribution analysis, and critical portfolio exposure modeling.
 
 
 
