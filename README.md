@@ -7,7 +7,7 @@ End-to-end SQL and spreadsheet pipeline for cleaning, transforming, and analyzin
 
 ## Executive Summary
 Analyzed a dataset of **22,090 insurance records** with 104 attributes to evaluate portfolio health.  
-The analysis transformed raw operational insurance data into a structured analytical dataset **revenue concentration, portfolio risk exposure, and operational inefficiencies**.
+The analysis transformed raw operational insurance data into a structured analytical dataset to identify **revenue concentration, portfolio risk exposure, and operational inefficiencies**.
 
 Key objective was to provide actionable insights to help management understand profitability drivers and potential risk areas within the insurance portfolio.
 
@@ -78,7 +78,7 @@ Implemented SQL calculations to evaluate portfolio performance:
 - The portfolio contains **22,088 insured animals** across **10 farms**.
 - Total insured exposure exceeds **278M**, highlighting substantial financial liability.
 - Total premium income is approximately **8.35M**, while total claims exceed **298M**.
-- The portfolio-level loss ratio is 3572%, meaning total claims significantly exceed premium income.
+- The portfolio-level loss ratio is **35.72**, meaning claims are approximately **35 times higher than collected premium**, indicating severe portfolio underpricing.
   
 ### Farm-Level Risk & Profitability
 - Financial performance varies significantly across farms, with some generating strong premium income while others contribute disproportionately to claims.
@@ -92,6 +92,48 @@ Implemented SQL calculations to evaluate portfolio performance:
 - The **top 5 farms contribute 67.95%** of total premium income.
 - The **top 7 farms contribute 85.21%** of total premium income.
 - This indicates strong dependency risk, where the portfolio relies heavily on a limited number of farms for revenue generation.
+
+
+
+
+## Risk Modeling Insights
+
+Additional SQL risk modeling analysis was performed to identify high-risk farms, loss contributors, and portfolio exposure levels.
+
+### Largest Loss Contributors
+Analysis of farm-level profitability shows that a small number of farms contribute the majority of portfolio losses.
+
+- **SK-Duniyapur** generates the largest financial loss in the portfolio.
+- **SK Oasis Feedlot Farms** is the second-largest contributor to total losses.
+- These two farms alone represent a significant portion of the portfolio's financial exposure.
+
+This indicates that portfolio risk is **highly concentrated among a few large farms**.
+
+### Portfolio Risk Distribution
+Risk classification based on **claims-to-premium ratio (loss ratio)** shows:
+
+- **All 10 farms fall into the High Risk category**
+- This means claims exceed premium across the entire portfolio.
+
+This indicates potential issues in:
+- pricing strategy
+- underwriting standards
+- risk selection.
+
+### High-Value High-Risk Farms
+Advanced portfolio modeling identified farms that are both **high revenue contributors and high risk exposures**.
+
+Two farms were identified as **Critical Exposure**:
+
+- **SK-Duniyapur**
+- **SK Oasis Feedlot Farms**
+
+These farms combine:
+
+- very high premium share (~18% each)
+- extremely high loss ratios (>37)
+
+Because of their revenue importance and risk level, these farms represent the **most critical exposure points in the insurance portfolio**.
 
 
 
@@ -122,12 +164,13 @@ These metrics highlight **portfolio dependency risk**, where a large portion of 
 
 This analysis provides several operational and financial insights:
 
-- Highlights **revenue concentration risk**, where a large share of premium income depends on a small number of farms.
-- Identifies **high-claim farms** that may require underwriting review.
+- Identifies **revenue concentration risk**, where a large share of premium income depends on a small number of farms.
+- Highlights **high-loss farms** that require underwriting review or pricing adjustments.
+- Reveals systemic portfolio risk where claims consistently exceed premiums.
 - Improves **data quality visibility** by identifying missing values and inconsistent identifiers.
-- Provides a **structured portfolio view** that supports risk management and pricing decisions.
+- Provides a **structured portfolio risk view** to support insurance pricing, underwriting, and risk management decisions.
 
-These insights help insurance managers better understand portfolio exposure and improve decision-making.
+These insights help insurance managers better understand portfolio exposure and improve strategic decision-making.
 
 
 
@@ -216,6 +259,11 @@ SUM(Premium) AS Total_Premium,
 SUM(Claim_amount) AS Total_Claim,
 CAST(SUM(Claim_amount) / NULLIF(SUM(Premium),0) AS DECIMAL(18,2)) AS Loss_Ratio
 FROM dbo.MasterDataCleaned;
+
+Additional analytical and risk modeling queries are available in:
+
+`scripts/02_Exploratory_Portfolio_Analysis.sql`  
+`scripts/03_Risk_Modeling.sql`
 
 
 
