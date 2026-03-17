@@ -426,6 +426,38 @@ Additional analytical and risk modeling queries are available in:
 
 
 
+## Sample Analytical Output
+
+The following outputs were generated using SQL queries to evaluate portfolio performance, revenue concentration, and risk exposure across farms.
+
+These results represent key stages of the analytical workflow and support the insights presented in this project.
+
+---
+
+### Portfolio Summary
+
+This output provides a high-level overview of the insurance portfolio, including total premium, total claims, and overall loss ratio.
+
+![Portfolio Summary](images/portfolio_summary.png)
+
+---
+
+### Premium Concentration Analysis
+
+This analysis highlights how premium revenue is distributed across farms and identifies dependency on top contributors.
+
+![Premium Concentration](images/premium_concentration.png)
+
+---
+
+### Composite Risk Scoring Model
+
+This output shows the multi-factor risk scoring model, ranking farms based on loss ratio, premium share, and claim frequency.
+
+![Risk Scoring Model](images/risk_scoring_model.png)
+
+
+
 
 ## How to Run the Project
 
