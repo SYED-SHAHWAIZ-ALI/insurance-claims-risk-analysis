@@ -175,8 +175,10 @@ SELECT
     Loss_Ratio,
     Premium_Share_Percent,
     CASE
-        WHEN Premium_Share_Percent >= 10 AND Loss_Ratio > 35 THEN 'Critical Exposure'
-        WHEN Premium_Share_Percent >= 8 AND Loss_Ratio > 33 THEN 'High Exposure'
+    WHEN Premium_Share_Percent >= 10 AND Loss_Ratio > 35 THEN 'Critical Exposure'
+    WHEN Premium_Share_Percent >= 8 AND Loss_Ratio > 33 THEN 'High Exposure'
+    ELSE 'Monitor'
+END AS Exposure_Category
     /*
 -----------------------------------------------------------
 6. Composite Risk Scoring Model (Multi-Factor)
