@@ -219,3 +219,35 @@ ORDER BY Risk_Score DESC;
     END AS Exposure_Category
 FROM farm_metrics
 ORDER BY Loss_Ratio DESC, Premium_Share_Percent DESC;
+
+/*
+-----------------------------------------------------------
+7. Claim Severity Analysis
+-----------------------------------------------------------
+Business Question:
+Which farms generate the highest average claim severity per animal,
+and how does claim severity vary across the portfolio?
+
+Purpose:
+This query evaluates the average claim size to identify farms
+exposed to high-severity (high-cost) losses.
+*/
+
+SELECT *,
+    DENSE_RANK() OVER(ORDER BY Avg_Claim_Severity DESC) AS Severity_Rank
+FROM (
+    SELECT
+        FARM_NAME,
+        SUM(Claim_amount) AS Total_Claims,
+        COUNT(Claim_amount) AS Total_Claims_Count,
+
+        -- Average Claim Size (Severity)
+        CAST(
+            SUM(Claim_amount) * 1.0 / NULLIF(COUNT(Claim_amount), 0)
+            AS DECIMAL(18,2)
+        ) AS Avg_Claim_Severity
+
+    FROM dbo.MasterDataCleaned
+    GROUP BY FARM_NAME
+) AS e
+ORDER BY Avg_Claim_Severity DESC;
