@@ -61,19 +61,19 @@ The goal was to clean the dataset and produce insights that support better portf
 
 ## Key Analytical Questions
 
-The analysis was designed to answer several portfolio-level questions relevant to insurance risk management:
+The analysis focuses on key portfolio-level questions relevant to insurance risk management:
 
 1. **Portfolio Health**
-   - Is the overall insurance portfolio profitable based on premium vs claims?
+   - Is the overall portfolio profitable based on premium vs claims?
 
 2. **Revenue Drivers**
    - Which farms generate the highest premium revenue?
 
 3. **Loss Drivers**
-   - Which farms contribute the largest share of claims and financial losses?
+   - Which farms contribute the largest financial losses?
 
 4. **Portfolio Concentration Risk**
-   - Is premium revenue concentrated among a small number of farms?
+   - Is premium revenue concentrated among a few farms?
 
 5. **High-Value High-Risk Exposure**
    - Which farms combine high premium contribution with high loss ratios?
@@ -86,22 +86,22 @@ These analytical questions guided the SQL queries and risk modeling performed in
 ## Data Engineering Pipeline
 
 ### Data Cleaning
-- Standardized `Tag Number` formats using SQL logic
+- Standardized `Tag Number` formats
 - Handled missing values in **Sum Insured**
-- Removed **40+ redundant columns** to optimize analysis
-- Structured raw operational data into analysis-ready format
+- Removed **40+ redundant columns**
+- Prepared structured, analysis-ready dataset
 
 ### Risk Modeling
-Implemented SQL calculations to evaluate portfolio performance:
+Key SQL calculations implemented:
 
 - **Premium Calculation**
   Applied a standard **3% premium rate** on `Sum Insured`
 
-- **Claims-to-Premium Ratio**  
+- **Claims-to-Premium Ratio**
   Identified farms where `Claim Amount > Premium`
 
 - **Year-over-Year Analysis**
-  Compared portfolio performance between **2024 and 2025**
+  Compared performance across **2024 and 2025**
 
 
 
@@ -132,95 +132,51 @@ Implemented SQL calculations to evaluate portfolio performance:
 
 ## Risk Modeling Insights
 
-Additional SQL risk modeling analysis was performed to identify high-risk farms, loss contributors, and portfolio exposure levels.
+Advanced SQL analysis was performed to identify key risk drivers and portfolio exposure patterns.
 
 ### Largest Loss Contributors
-Analysis of farm-level profitability shows that a small number of farms contribute the majority of portfolio losses.
+- **SK-Duniyapur** is the largest loss contributor
+- **SK Oasis Feedlot Farms** ranks second
 
-- **SK-Duniyapur** generates the largest financial loss in the portfolio.
-- **SK Oasis Feedlot Farms** is the second-largest contributor to total losses.
-- These two farms alone represent a significant portion of the portfolio's financial exposure.
+These farms represent a significant share of total portfolio losses, indicating concentrated risk exposure.
 
-This indicates that portfolio risk is **highly concentrated among a few large farms**.
 
 ### Portfolio Risk Distribution
-Risk classification based on **claims-to-premium ratio (loss ratio)** shows:
+- All farms fall into the **High Risk category**
+- Claims exceed premium across the entire portfolio
 
-- **All 10 farms fall into the High Risk category**
-- This means claims exceed premium across the entire portfolio.
+This suggests fundamental issues in:
+- pricing strategy  
+- underwriting standards  
+- risk selection  
 
-This indicates potential issues in:
-- pricing strategy
-- underwriting standards
-- risk selection.
 
 ### High-Value High-Risk Farms
-Advanced portfolio modeling identified farms that are both **high revenue contributors and high risk exposures**.
-
 Two farms were identified as **Critical Exposure**:
 
 - **SK-Duniyapur**
 - **SK Oasis Feedlot Farms**
 
 These farms combine:
-
-- very high premium share (~18% each)
+- high premium contribution (~18%)
 - extremely high loss ratios (>37)
 
-Because of their revenue importance and risk level, these farms represent the **most critical exposure points in the insurance portfolio**.
+They represent the most significant risk points in the portfolio.
+
 
 ### Composite Risk Scoring Model
 
-To enhance portfolio risk assessment, a multi-factor risk scoring model was developed using SQL.
+A multi-factor risk model was developed using:
 
-The model integrates three key dimensions of insurance risk:
-
-- **Loss Ratio** → Measures claim severity relative to premium
-- **Premium Share** → Represents portfolio dependency on each farm
-- **Claim Frequency Share** → Captures operational claim intensity
-
-A weighted scoring approach was applied:
-
-- 50% weight → Loss Ratio (severity)
-- 30% weight → Premium Share (exposure)
-- 20% weight → Claim Frequency Share (frequency)
-
-This allows a more comprehensive evaluation of risk compared to single-metric analysis.
+- **Loss Ratio (50%)**
+- **Premium Share (30%)**
+- **Claim Frequency Share (20%)**
 
 #### Key Findings
-
-- **SK-Duniyapur** ranks as the highest overall risk farm, driven by:
-  - extremely high loss ratio (~38)
-  - highest claim frequency share (~20%)
-  - significant premium contribution (~18%)
-
-- **SK Oasis Feedlot Farms** ranks second, confirming its status as a critical exposure farm.
-
-- Farms with **high claim frequency combined with high loss ratios** significantly amplify portfolio risk.
-
-- Lower-ranked farms such as **Quality Meat Exports** and **Rohi Cattle** show comparatively lower overall risk due to:
-  - smaller premium share
-  - lower claim frequency contribution
-
-This analysis demonstrates that portfolio risk is driven not only by large losses, but also by **frequency and concentration effects**.
-
-The model enables prioritization of farms requiring immediate underwriting review and risk mitigation.
-
-### Claim Severity Analysis
-
-Claim severity analysis was performed to evaluate the average cost per claim across farms.
-
-This helps distinguish between:
-
-- high-frequency, low-impact claims  
-- low-frequency, high-impact (catastrophic) claims  
-
-#### Key Findings
-
-- **Baloch Cattle Farm** shows the highest claim severity, indicating exposure to large individual loss events.
-- **Hi Cattle Farm** and **Rohi Cattle** also exhibit high average claim sizes, suggesting potential catastrophic risk.
-- Some farms with high total losses do not necessarily have the highest severity, indicating that losses may be driven by **claim frequency rather than individual claim size**.
-- Farms such as **Quality Meat Exports** show lower severity, suggesting smaller average claim values.
+- **SK-Duniyapur** ranks highest due to extreme loss ratio, high frequency, and large premium share  
+- **SK Oasis Feedlot Farms** ranks second, confirming critical exposure  
+- High frequency combined with high loss ratios significantly increases portfolio risk  
+- Lower-risk farms show smaller premium share and reduced claim frequency  
 
 This analysis highlights that portfolio risk is driven by both:
 
@@ -255,31 +211,31 @@ These metrics highlight **portfolio dependency risk**, where a large portion of 
 
 ## Portfolio Risk Interpretation
 
-The SQL analysis reveals several structural issues within the insurance portfolio.
+The analysis reveals several structural issues within the insurance portfolio.
 
 ### Severe Underpricing Risk
-The portfolio loss ratio of **35.72** indicates that claims are approximately **35 times greater than collected premium**, suggesting significant pricing or underwriting issues.
+A loss ratio of **35.72** indicates claims are approximately **35 times higher than premium**, making the portfolio financially unsustainable.
 
-In a sustainable insurance portfolio, loss ratios typically remain between **0.60 and 0.80** depending on product type. The current ratio indicates that the portfolio is operating at a substantial loss.
+In a stable insurance model, loss ratios typically range between **0.60 and 0.80**.
+
 
 ### Exposure Concentration Risk
-Revenue concentration analysis shows that a small number of farms generate the majority of premium income.
+Revenue is heavily concentrated among a few farms:
 
-- Top 3 farms generate **48.95%** of premium
-- Top 5 farms generate **67.95%** of premium
-- Top 7 farms generate **85.21%** of premium
+- Top 3 farms → **48.95%**
+- Top 5 farms → **67.95%**
+- Top 7 farms → **85.21%**
 
-This creates operational risk because financial performance becomes highly dependent on a few key farms.
+This creates dependency risk and reduces portfolio stability.
+
 
 ### Critical Risk Farms
-Two farms were identified as critical exposure points:
-
 - **SK-Duniyapur**
 - **SK Oasis Feedlot Farms**
 
-These farms combine **high premium contribution with extremely high loss ratios**, making them the most important risk drivers in the portfolio.
+These farms combine high revenue contribution with extreme loss ratios, making them the primary risk drivers.
 
-If not addressed, these farms could significantly impact overall portfolio sustainability.
+Without intervention, they pose a significant threat to portfolio sustainability.
 
 
 
