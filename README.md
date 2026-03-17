@@ -423,7 +423,7 @@ Additional analytical and risk modeling queries are available in:
 
 `scripts/02_Exploratory_Portfolio_Analysis.sql`  
 `scripts/03_Risk_Modeling.sql`
-
+```
 
 
 ## Sample Analytical Output
@@ -462,7 +462,7 @@ This output highlights the farms contributing the highest share of premium reven
 
 ![Top Farms Revenue](top_farms_revenue.png)
 
-
+```
 ## How to Run the Project
 
 1. Import the raw dataset into SQL Server.
