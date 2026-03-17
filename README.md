@@ -438,7 +438,7 @@ These results represent key stages of the analytical workflow and support the in
 
 This output provides a high-level overview of the insurance portfolio, including total premium, total claims, and overall loss ratio.
 
-![Portfolio Summary](images/portfolio_summary.png)
+![Portfolio Summary](portfolio_summary.png)
 
 
 
@@ -446,7 +446,7 @@ This output provides a high-level overview of the insurance portfolio, including
 
 This analysis highlights how premium revenue is distributed across farms and identifies dependency on top contributors.
 
-![Premium Concentration](images/premium_concentration.png)
+![Premium Concentration](premium_concentration.png)
 
 
 
@@ -454,7 +454,7 @@ This analysis highlights how premium revenue is distributed across farms and ide
 
 This output shows the multi-factor risk scoring model, ranking farms based on loss ratio, premium share, and claim frequency.
 
-![Risk Scoring Model](images/risk_scoring_model.png)
+![Risk Scoring Model](risk_scoring_model.png)
 
 
 
