@@ -432,7 +432,7 @@ The following outputs were generated using SQL queries to evaluate portfolio per
 
 These results represent key stages of the analytical workflow and support the insights presented in this project.
 
----
+
 
 ### Portfolio Summary
 
@@ -440,7 +440,7 @@ This output provides a high-level overview of the insurance portfolio, including
 
 ![Portfolio Summary](images/portfolio_summary.png)
 
----
+
 
 ### Premium Concentration Analysis
 
@@ -448,7 +448,7 @@ This analysis highlights how premium revenue is distributed across farms and ide
 
 ![Premium Concentration](images/premium_concentration.png)
 
----
+
 
 ### Composite Risk Scoring Model
 
