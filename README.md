@@ -205,6 +205,29 @@ This analysis demonstrates that portfolio risk is driven not only by large losse
 
 The model enables prioritization of farms requiring immediate underwriting review and risk mitigation.
 
+### Claim Severity Analysis
+
+Claim severity analysis was performed to evaluate the average cost per claim across farms.
+
+This helps distinguish between:
+
+- high-frequency, low-impact claims  
+- low-frequency, high-impact (catastrophic) claims  
+
+#### Key Findings
+
+- **Baloch Cattle Farm** shows the highest claim severity, indicating exposure to large individual loss events.
+- **Hi Cattle Farm** and **Rohi Cattle** also exhibit high average claim sizes, suggesting potential catastrophic risk.
+- Some farms with high total losses do not necessarily have the highest severity, indicating that losses may be driven by **claim frequency rather than individual claim size**.
+- Farms such as **Quality Meat Exports** show lower severity, suggesting smaller average claim values.
+
+This analysis highlights that portfolio risk is driven by both:
+
+- **how often claims occur (frequency)**  
+- **how large each claim is (severity)**  
+
+Understanding this distinction is critical for effective pricing and underwriting decisions.
+
 
 
   
