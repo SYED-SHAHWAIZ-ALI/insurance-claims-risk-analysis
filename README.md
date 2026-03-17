@@ -436,7 +436,11 @@ These results represent key stages of the analytical workflow and support the in
 
 This output provides a high-level overview of the insurance portfolio, including total premium, total claims, and overall loss ratio.
 
-![Portfolio Summary](portfolio_summary.png)
+<img src="portfolio_summary.png" width="800">
+
+*Figure: Portfolio-level performance summary generated using SQL*
+
+👉 Insight: The portfolio shows extreme imbalance between premium and claims, confirming severe underpricing and unsustainable risk exposure.
 
 ---
 
@@ -444,7 +448,11 @@ This output provides a high-level overview of the insurance portfolio, including
 
 This analysis highlights how premium revenue is distributed across farms and identifies dependency on top contributors.
 
-![Premium Concentration](premium_concentration.png)
+<img src="premium_concentration.png" width="800">
+
+*Figure: Premium revenue concentration across farms*
+
+👉 Insight: A small number of farms dominate premium contribution, exposing the portfolio to significant concentration and dependency risk.
 
 ---
 
@@ -452,17 +460,27 @@ This analysis highlights how premium revenue is distributed across farms and ide
 
 This output shows the multi-factor risk scoring model, ranking farms based on loss ratio, premium share, and claim frequency.
 
-![Risk Scoring Model](risk_scoring_model.png)
+<img src="risk_scoring_model.png" width="800">
+
+*Figure: Multi-factor risk scoring model combining severity, exposure, and frequency*
+
+👉 Insight: SK-Duniyapur and SK Oasis Feedlot Farms rank as the highest-risk entities due to a combination of high loss ratios, high claim frequency, and significant premium share.
 
 ---
 
 ### Top Farms Revenue Contribution
 
-This output highlights the farms contributing the highest share of premium revenue, helping identify key revenue drivers.
+This output highlights the farms contributing the highest share of premium revenue, helping identify key revenue drivers in the portfolio.
 
-![Top Farms Revenue](top_farms_revenue.png)
+<img src="top_farms_revenue.png" width="800">
 
-```
+*Figure: Top revenue-generating farms based on premium contribution*
+
+👉 Insight: The portfolio is heavily reliant on a few farms for revenue, increasing financial vulnerability if these farms underperform.
+
+---
+
+
 ## How to Run the Project
 
 1. Import the raw dataset into SQL Server.
