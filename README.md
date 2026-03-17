@@ -168,6 +168,43 @@ These farms combine:
 
 Because of their revenue importance and risk level, these farms represent the **most critical exposure points in the insurance portfolio**.
 
+### Composite Risk Scoring Model
+
+To enhance portfolio risk assessment, a multi-factor risk scoring model was developed using SQL.
+
+The model integrates three key dimensions of insurance risk:
+
+- **Loss Ratio** → Measures claim severity relative to premium
+- **Premium Share** → Represents portfolio dependency on each farm
+- **Claim Frequency Share** → Captures operational claim intensity
+
+A weighted scoring approach was applied:
+
+- 50% weight → Loss Ratio (severity)
+- 30% weight → Premium Share (exposure)
+- 20% weight → Claim Frequency Share (frequency)
+
+This allows a more comprehensive evaluation of risk compared to single-metric analysis.
+
+#### Key Findings
+
+- **SK-Duniyapur** ranks as the highest overall risk farm, driven by:
+  - extremely high loss ratio (~38)
+  - highest claim frequency share (~20%)
+  - significant premium contribution (~18%)
+
+- **SK Oasis Feedlot Farms** ranks second, confirming its status as a critical exposure farm.
+
+- Farms with **high claim frequency combined with high loss ratios** significantly amplify portfolio risk.
+
+- Lower-ranked farms such as **Quality Meat Exports** and **Rohi Cattle** show comparatively lower overall risk due to:
+  - smaller premium share
+  - lower claim frequency contribution
+
+This analysis demonstrates that portfolio risk is driven not only by large losses, but also by **frequency and concentration effects**.
+
+The model enables prioritization of farms requiring immediate underwriting review and risk mitigation.
+
 
 
   
