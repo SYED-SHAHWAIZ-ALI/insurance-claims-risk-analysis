@@ -177,6 +177,44 @@ SELECT
     CASE
         WHEN Premium_Share_Percent >= 10 AND Loss_Ratio > 35 THEN 'Critical Exposure'
         WHEN Premium_Share_Percent >= 8 AND Loss_Ratio > 33 THEN 'High Exposure'
+    /*
+-----------------------------------------------------------
+6. Composite Risk Scoring Model (Multi-Factor)
+-----------------------------------------------------------
+Business Question:
+Which farms represent the highest overall portfolio risk when
+considering loss severity, revenue contribution, and claim frequency?
+
+Purpose:
+This query builds a composite risk score using three dimensions:
+
+- Loss Ratio (severity of losses)
+- Premium Share (portfolio exposure)
+- Claim Frequency (operational risk intensity)
+
+This allows prioritization of farms based on total portfolio impact.
+*/
+    SELECT
+        FARM_NAME,
+        SUM(Premium) AS Total_Premium,
+        SUM(Claim_amount) AS Total_Claims,
+        SUM(Claim_amount) * 1.0 / NULLIF(SUM(Premium),0) AS Loss_Ratio,
+        SUM(Premium) * 1.0 / SUM(SUM(Premium)) OVER () AS Premium_Share,
+        COUNT(Claim_amount) * 1.0 / SUM(COUNT(Claim_amount)) OVER () AS Claim_Frequency_Share 
+    FROM dbo.MasterDataCleaned
+    GROUP BY FARM_NAME
+), risk_metrics AS (
+SELECT *,
+    (
+      CAST( ROUND( 0.5 * Loss_Ratio +
+      0.3 * Premium_Share * 100 +
+      0.2 * Claim_Frequency_Share * 100,2) AS DECIMAL(18,2))
+    ) AS Risk_Score
+FROM farm_metrics
+)
+SELECT *,DENSE_RANK() OVER(ORDER BY Risk_Score DESC) AS Ranking
+FROM risk_metrics
+ORDER BY Risk_Score DESC;
         ELSE 'Monitor'
     END AS Exposure_Category
 FROM farm_metrics
