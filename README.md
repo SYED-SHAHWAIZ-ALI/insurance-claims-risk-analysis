@@ -13,6 +13,21 @@ Key objective was to provide actionable insights to help management understand p
 
 
 
+## Key Metrics Snapshot
+
+| Metric                     | Value        |
+|--------------------------|-------------|
+| Total Records            | 22,090      |
+| Total Farms              | 10          |
+| Total Sum Insured        | 278M+       |
+| Total Premium            | 8.35M       |
+| Total Claims             | 298M+       |
+| Portfolio Loss Ratio     | 35.72       |
+
+
+
+
+
 ## Project Highlights
 
 • Analyzed **22,000+ livestock insurance records** across **10 farms**  
