@@ -47,6 +47,7 @@ Key objective was to provide actionable insights to help management understand p
 
 
 
+
   ## SQL Skills Demonstrated
 
 This project demonstrates practical application of SQL in a real-world analytical context:
