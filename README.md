@@ -47,6 +47,39 @@ Key objective was to provide actionable insights to help management understand p
 
 
 
+  ## SQL Skills Demonstrated
+
+This project demonstrates practical application of SQL in a real-world analytical context:
+
+- Data Cleaning & Transformation  
+  - Handling missing values  
+  - Standardizing inconsistent fields  
+  - Removing redundant columns  
+
+- Aggregations & Window Functions  
+  - `SUM()`, `COUNT()`, `GROUP BY`  
+  - `DENSE_RANK()` for ranking farms  
+  - Window functions for cumulative analysis  
+
+- Business Metrics Calculation  
+  - Loss Ratio  
+  - Premium Share  
+  - Claim Frequency & Severity  
+
+- Analytical Modeling  
+  - Risk classification using CASE logic  
+  - Multi-factor risk scoring model  
+  - Portfolio concentration analysis  
+
+- Performance Analysis  
+  - Farm-level profitability  
+  - Revenue contribution  
+  - Risk segmentation  
+
+This reflects SQL usage beyond querying, focusing on **decision-support analytics and risk modeling**.
+
+
+
 
 ## Project Workflow
 
