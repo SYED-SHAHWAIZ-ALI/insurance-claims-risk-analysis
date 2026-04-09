@@ -488,13 +488,18 @@ This output highlights the farms contributing the highest share of premium reven
 
 ## How to Run the Project
 
+## How to Run the Project
+
 1. Import the raw dataset into SQL Server.
-2. Run the cleaning pipeline:
-   `scripts/01_Cleaning_Pipeline.sql`
-3. Run exploratory analysis:
-   `scripts/02_Exploratory_Portfolio_Analysis.sql`
-4. Run risk modeling queries:
-   `scripts/03_Risk_Modeling.sql`
+
+2. Run the cleaning pipeline:  
+   [01_Cleaning_Pipeline.sql](scripts/01_Cleaning_Pipeline.sql)
+
+3. Run exploratory analysis:  
+   [02_Exploratory_Portfolio_Analysis.sql](scripts/02_Exploratory_Portfolio_Analysis.sql)
+
+4. Run risk modeling queries:  
+   [03_Risk_Modeling.sql](scripts/03_Risk_Modeling.sql)
 
 
 
