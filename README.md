@@ -258,6 +258,7 @@ These metrics highlight **portfolio dependency risk**, where a large portion of 
 
 
 
+
 ## Portfolio Risk Interpretation
 
 The analysis reveals several structural issues within the insurance portfolio.
@@ -381,6 +382,7 @@ insurance-claims-risk-analysis
 
 
 
+
 ## Exploratory Portfolio Analysis
 
 The exploratory analysis stage was implemented in **`02_Exploratory_Portfolio_Analysis.sql`** to understand portfolio structure, revenue distribution, and farm-level performance.
@@ -444,6 +446,8 @@ Additional analytical and risk modeling queries are available in:
 ```
 
 
+
+
 ## Sample Analytical Output
 
 These results represent key stages of the analytical workflow and support the insights presented in this project.
@@ -499,7 +503,7 @@ This output highlights the farms contributing the highest share of premium reven
 ---
 
 
-## How to Run the Project
+
 
 ## How to Run the Project
 
