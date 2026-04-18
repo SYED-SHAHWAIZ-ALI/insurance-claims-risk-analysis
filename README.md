@@ -325,6 +325,19 @@ This will improve portfolio stability and reduce exposure concentration.
 
 
 
+## Analytical Considerations
+
+While the analysis is based on real operational insurance data, the following considerations should be noted:
+
+- Premium values were calculated using a standardized **3% rate**, which may differ from actual pricing and underwriting policies across insurance portfolios  
+- Claim data is aggregated at the farm level and does not distinguish between different types of losses  
+- External risk factors such as environmental conditions, disease outbreaks, and regional variations are not included  
+- The analysis assumes consistent policy structure across farms, whereas real-world portfolios may have varying coverage terms and risk profiles  
+
+These considerations should be taken into account when interpreting results and can be refined in future analysis.
+
+
+
 ## Business Value
 
 This analysis provides several operational and financial insights:
