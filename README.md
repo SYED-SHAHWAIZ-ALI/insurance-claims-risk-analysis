@@ -40,6 +40,15 @@ Key objective was to provide actionable insights to help management understand p
 
 
 
+## 🚧 Ongoing Work (Confidential)
+
+Currently developing an advanced data pipeline focused on automation, scalability, and production-ready workflows.
+
+Due to commercial considerations, full details are not publicly disclosed at this stage.
+
+
+
+
 ## Technology Stack
 - **SQL** – Data transformation, aggregation, and portfolio risk modeling
 - **Spreadsheets (Excel / Google Sheets)** – Preliminary data exploration and early ETL
