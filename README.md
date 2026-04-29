@@ -335,7 +335,7 @@ This will improve portfolio stability and reduce exposure concentration.
 
 
 
-## Analytical Considerations
+## Limitations & Assumptions
 
 While the analysis is based on real operational insurance data, the following considerations should be noted:
 
